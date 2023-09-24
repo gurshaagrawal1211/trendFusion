@@ -40,5 +40,51 @@ nav{
 }
 .slider
 {
-    background:url();
+    background:url("./images/rodolfo-puchulu-jGfIzudYK_Q-unsplash\ \(1\).jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+.sliderWrapper
+{
+    display: flex;
+    width: 500vw;
+}
+.sliderItem
+{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sliderBg
+{
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    border-radius: 50%;    
+}
+.sliderImg
+{
+    
+    z-index: 1;
+}
+
+.sliderTitle
+{
+    margin-left: 3%;
+    z-index:1;
+    text-align: center;
+}
+.sliderItem:nth-child(1) .sliderBg
+{
+    background-color: #369e62; 
+}
+.sliderItem:nth-child(2) .sliderBg {
+    background-color: rebeccapurple;
+}
+.sliderItem:nth-child(3) .sliderBg {
+    background-color: teal;
+}
+.sliderItem:nth-child(4) .sliderBg {
+    background-color: cornflowerblue;
 }
