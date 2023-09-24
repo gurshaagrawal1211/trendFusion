@@ -20,7 +20,7 @@ nav{
     display: flex;
     align-items: center;
     background-color:rgb(211, 204, 204);
-    padding: 10px;
+    padding: 10px 40px;
     border-radius: 10px;
 }
 .searchInput
@@ -38,16 +38,35 @@ nav{
     border-bottom: 2px solid green;
     cursor: pointer;
 }
+
+.navBottom
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menuItem
+{
+    margin-right: 50px;
+    cursor: pointer;
+    color: lightgray;
+    font-weight: 100;
+}
+
 .slider
 {
     background:url("./images/rodolfo-puchulu-jGfIzudYK_Q-unsplash\ \(1\).jpg");
     background-repeat: no-repeat;
     background-size: auto;
+    overflow: hidden;
+    height:430px;
 }
 .sliderWrapper
 {
     display: flex;
     width: 500vw;
+    transition: all 1s ease-in-out;
 }
 .sliderItem
 {
