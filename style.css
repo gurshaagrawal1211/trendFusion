@@ -154,6 +154,7 @@ nav{
 .productImg
 {
     width: 50%;
+    height: 45vw;
 }
 
 .productDetails
@@ -214,7 +215,7 @@ nav{
     color: white;
     font-weight: 600;
     cursor: pointer;
-    ma
+    margin-top: 10px;
 }
 
 .productButton:hover
