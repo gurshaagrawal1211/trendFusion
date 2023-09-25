@@ -107,3 +107,118 @@ nav{
 .sliderItem:nth-child(4) .sliderBg {
     background-color: cornflowerblue;
 }
+
+.features
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    
+}
+
+.feature{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.featureIcon
+{
+    width: 50px;
+    height: 50px;
+}
+
+.featureTitle
+{
+    font-size: 20px;
+    font-weight: 600;
+    margin: 20px;
+}
+
+.featureDesc
+{
+    color:gray;
+    width: 50%;
+    height: 100px;
+}
+
+.product
+{
+    height: 100vh;
+    border-color: whitesmoke;
+    position: relative;
+}
+
+.productImg
+{
+    width: 50%;
+}
+
+.productDetails
+{
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 40%;
+    padding: 50px;
+}
+
+.projectTitle
+{
+    font-size: 75px;
+    font-weight:900;
+}
+
+.productDesc{
+    font-size:24px;
+    color: gray;
+}
+
+.colors,.sizes
+{
+    display: flex;
+}
+
+.color
+{
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    background-color: black;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.color:last-child
+{
+    background-color: darkmagenta;
+}
+
+.size
+{
+    padding: 5px 20px;
+    border: 1px solid black;
+    margin-top: 15px;
+    margin-right:10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.productButton
+{
+    float: right;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    ma
+}
+
+.productButton:hover
+{
+    background-color: white;
+    color: black;
+}
