@@ -1,98 +1,83 @@
-const wrapper=document.querySelector(".sliderWrapper");
-
-console.log(wrapper);
 
 const products = [
-  {
-    id: 1,
-    title: "Air Force",
-    price: 119,
-    colors: [
-      {
-        code: "black",
-        img: "./img/air.png",
-      },
-      {
-        code: "darkblue",
-        img: "./img/air2.png",
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: "Air Jordan",
-    price: 149,
-    colors: [
-      {
-        code: "lightgray",
-        img: "./img/jordan.png",
-      },
-      {
-        code: "green",
-        img: "./img/jordan2.png",
-      },
-    ],
-  },
-  {
-    id: 3,
-    title: "Blazer",
-    price: 109,
-    colors: [
-      {
-        code: "lightgray",
-        img: "./img/blazer.png",
-      },
-      {
-        code: "green",
-        img: "./img/blazer2.png",
-      },
-    ],
-  },
-  {
-    id: 4,
-    title: "Crater",
-    price: 129,
-    colors: [
-      {
-        code: "black",
-        img: "./img/crater.png",
-      },
-      {
-        code: "lightgray",
-        img: "./img/crater2.png",
-      },
-    ],
-  },
-  {
-    id: 5,
-    title: "Hippie",
-    price: 99,
-    colors: [
-      {
-        code: "gray",
-        img: "./img/hippie.png",
-      },
-      {
-        code: "black",
-        img: "./img/hippie2.png",
-      },
-    ],
-  },
+  [
+    {
+      id:0,
+      img:"./images/dress2.jpg",
+      desc:"Red Maxi Dress",
+      price:"899",
+    },
+    {
+      id:1,
+      img:"./images/dress3.jpg",
+      desc:"Purple Maxi Dress",
+      price:"799",
+    },
+    {
+      id:2,
+      img:"./images/dress4.jpg",
+      desc:"Bottle neck Gown",
+      price:"999",
+    },
+  ],
+  [
+    {
+      id:0,
+      img:"./images/dress2.jpg",
+      desc:"Red Maxi Dress",
+      price:"899",
+    },
+    {
+      id:1,
+      img:"./images/dress3.jpg",
+      desc:"Purple Maxi Dress",
+      price:"799",
+    },
+    {
+      id:2,
+      img:"./images/dress4.jpg",
+      desc:"Bottle neck Gown",
+      price:"999",
+    },
+  ],
+    
 ];
 
-let choosenProduct=products[0];
 
-const currentProductImg=document.querySelector(".productImg");
-const currentProductTitle=document.querySelector(".productTitle");
-const currentProductPrice=document.querySelector(".productPrice");
-const currentProductColors=document.querySelectorAll(".color");
-const currentProductSizes=document.querySelectorAll(".size");
+const wrapper=document.querySelector(".sliderWrapper");
+
+
+const menuItems=document.querySelectorAll(".menuItem");
+const originalDiv=document.querySelector(".product");
+const productsContainer=document.querySelector(".products");
+
+
+const currentProductImg=document.querySelector(".productImg-sm");
+const currentProductDesc=document.querySelector(".desc");
+const currentProductPrice=document.querySelector(".price");
+
+
+
+
 
 window.addEventListener("load",()=>{
     wrapper.style.transform="translate(0vw)"
+     for(let i=0;i<3;i++)
+      {
+          const clonedDiv=originalDiv.cloneNode(true);
+          productsContainer.appendChild(clonedDiv);
+
+        let choosenProduct=products[0];
+
+        currentProductImg.src=choosenProduct[i].img;
+        currentProductDesc.textContent=choosenProduct[i].desc;
+        currentProductPrice.textContent= "₹" + choosenProduct[i].price;
+       
+      }
+
 })
 
-const menuItems=document.querySelectorAll(".menuItem");
+
 
 menuItems.forEach((item,index)=>{
     item.addEventListener("click",()=>{
@@ -102,12 +87,34 @@ menuItems.forEach((item,index)=>{
         //change the choosen product
         choosenProduct=products[index];
 
-        //change texts of currentProduct
-        currentProductTitle.textContent=choosenProduct.title;
-        currentProductPrice.textContent= "$" + choosenProduct.price;
-        currentProductImg.src=choosenProduct.colors[0].img;
-        currentProductColors.forEach((color,index)=>{
-            color.style.backgroundColor=choosenProduct.colors[index].code;
+        // //change texts of currentProduct
+
+        for(let i=0;i<3;i++)
+        {
+          const clonedDiv=originalDiv.cloneNode(true);
+          productsContainer.appendChild(clonedDiv);
+
+        // currentProductPrice.textContent= "$" + choosenProduct.price;
+        currentProductImg.src=choosenProduct[i].img;
+        currentProductDesc.textContent=choosenProduct[i].desc;
+        currentProductPrice.textContent= "₹" + choosenProduct[i].price;
+       
+        }
         })
     });
-});
+
+
+// const productButton=document.querySelector(".productButton")
+// const payment=document.querySelector(".payment");
+// productButton.addEventListener("click",()=>{
+//   payment.style.display="flex";
+// });
+
+// const close=document.querySelector(".close");
+// close.addEventListener("click",()=>{
+//   payment.style.display="none";
+// })
+
+
+console.log(choosenProduct[1].img);
+
