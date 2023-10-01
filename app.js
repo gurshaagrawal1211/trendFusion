@@ -1,6 +1,12 @@
 
-const products = [
-  [
+const products = {
+  CLOTHES:[
+    {
+      id:0,
+      img:"./images/dress1.jpg",
+      desc:"White Off Shoulder Top",
+      price:"499",
+    },
     {
       id:0,
       img:"./images/dress2.jpg",
@@ -20,28 +26,34 @@ const products = [
       price:"999",
     },
   ],
-  [
+  ACCESSORIES:[
     {
       id:0,
-      img:"./images/dress2.jpg",
-      desc:"Red Maxi Dress",
-      price:"899",
+      img:"./images/accessories1.jpg",
+      desc:"Rose Gold Bracelet",
+      price:"299",
     },
     {
       id:1,
-      img:"./images/dress3.jpg",
-      desc:"Purple Maxi Dress",
-      price:"799",
+      img:"./images/accessories2.jpg",
+      desc:"Star Shaped Earrings",
+      price:"99",
     },
     {
       id:2,
-      img:"./images/dress4.jpg",
-      desc:"Bottle neck Gown",
-      price:"999",
+      img:"./images/accessories3.jpg",
+      desc:"Pearl Necklace",
+      price:"179",
+    },
+    {
+      id:3,
+      img:"./images/accessories4.jpg",
+      desc:"3-layers Necklace",
+      price:"399",
     },
   ],
     
-];
+};
 
 
 const wrapper=document.querySelector(".sliderWrapper");
@@ -49,7 +61,7 @@ const wrapper=document.querySelector(".sliderWrapper");
 
 const menuItems=document.querySelectorAll(".menuItem");
 const originalDiv=document.querySelector(".product");
-const productsContainer=document.querySelector(".products");
+let productsContainer=document.querySelector(".products");
 
 
 const currentProductImg=document.querySelector(".productImg-sm");
@@ -62,45 +74,66 @@ const currentProductPrice=document.querySelector(".price");
 
 window.addEventListener("load",()=>{
     wrapper.style.transform="translate(0vw)"
-     for(let i=0;i<3;i++)
-      {
-          const clonedDiv=originalDiv.cloneNode(true);
-          productsContainer.appendChild(clonedDiv);
-
-        let choosenProduct=products[0];
-
-        currentProductImg.src=choosenProduct[i].img;
-        currentProductDesc.textContent=choosenProduct[i].desc;
-        currentProductPrice.textContent= "₹" + choosenProduct[i].price;
-       
-      }
+  
 
 })
 
 
+// let productsToDisplay;
 
+let productsToDisplay=[];
 menuItems.forEach((item,index)=>{
     item.addEventListener("click",()=>{
+
+
         //change the current slide
         wrapper.style.transform=`translate(${-100 * index}vw)`;
-
-        //change the choosen product
-        choosenProduct=products[index];
-
-        // //change texts of currentProduct
-
-        for(let i=0;i<3;i++)
+        
+        while(productsContainer.firstChild)
         {
-          const clonedDiv=originalDiv.cloneNode(true);
-          productsContainer.appendChild(clonedDiv);
-
-        // currentProductPrice.textContent= "$" + choosenProduct.price;
-        currentProductImg.src=choosenProduct[i].img;
-        currentProductDesc.textContent=choosenProduct[i].desc;
-        currentProductPrice.textContent= "₹" + choosenProduct[i].price;
-       
+          productsContainer.removeChild(productsContainer.firstChild)
         }
+        
+        const value=item.innerHTML;
+        //console.log(products[value])
+        productsToDisplay=products[value];
+
+
+        productsToDisplay.map((pro)=>{
+
+          
+          const productItem=document.createElement('div');
+          productItem.classList.add('product');
+
+          const productImg=document.createElement('div');
+          productImg.classList.add('productImg');
+
+          productImg.innerHTML=`<img src="${pro.img}" alt="${pro.name}" class="productImg-sm">`
+
+          const productDetails=document.createElement('div');
+          productDetails.classList.add('productDetails');
+          
+          productDetails.innerHTML=`
+            <span class="desc">${pro.desc}</span>
+            <span class="price">₹${pro.price}</span>
+          `;
+
+          const btns=document.createElement('div');
+          btns.classList.add('btns');
+
+          btns.innerHTML=`
+            <button class="cartBtn">Add to Cart</button>
+            <button class="buyBtn">Buy Now</button>
+          `;
+
+        productDetails.appendChild(btns);
+        productItem.appendChild(productImg);
+        productItem.appendChild(productDetails);
+        productsContainer.appendChild(productItem);
         })
+
+      })
+       
     });
 
 
@@ -116,5 +149,5 @@ menuItems.forEach((item,index)=>{
 // })
 
 
-console.log(choosenProduct[1].img);
+
 
