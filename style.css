@@ -117,7 +117,16 @@ nav{
 .sliderImg1 img
 {
     width: 1000px;
-   margin-bottom: 110px;
+    margin-bottom: 110px;
+}
+.sliderImg2
+{
+    width: 40vw;
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
 }
 .sliderTitle
 {
