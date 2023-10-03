@@ -12,6 +12,7 @@ nav{
     background-color: #111;
     color: white;
     padding: 20px 50px;
+    height: 100px;
 }
 
 .navTop{
@@ -20,7 +21,7 @@ nav{
     align-items: center;
     justify-content: space-between;
 }
-.search
+/* .search
 {
     display: flex;
     align-items: center;
@@ -32,7 +33,7 @@ nav{
 {
     border: none;
     background-color: transparent;
-}
+} */
 /* .searchInput::placeholder
 {
     color: lightgray;
@@ -49,6 +50,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .menuItem
@@ -57,6 +59,22 @@ nav{
     cursor: pointer;
     color: lightgray;
     font-weight: 100;
+}
+
+.menuItem:hover
+{
+    color:green;
+}
+
+.menuItem:hover::after
+{
+    content: "";
+    width: 5%;
+    height: 2px;
+    background: green;
+    position: absolute;
+    bottom: -10px;
+    left: 100px;
 }
 
 .slider
@@ -145,7 +163,8 @@ nav{
     font-weight: 600;
     font-size: 20px;
 }
-.sliderItem:nth-child(1) .sliderBg
+
+/* .sliderItem:nth-child(1) .sliderBg
 {
     background-color: #369e62; 
 }
@@ -157,7 +176,7 @@ nav{
 }
 .sliderItem:nth-child(4) .sliderBg {
     background-color: cornflowerblue;
-}
+} */
 
 .features
 {
@@ -195,6 +214,9 @@ nav{
     height: 100px;
 }
 
+.products{
+    flex-wrap: wrap;
+}
 .product
 {
     height: 100vh;
@@ -243,7 +265,7 @@ nav{
     cursor: pointer;
 }
 
-.color:last-child
+/* .color:last-child
 {
     background-color: darkmagenta;
 }
@@ -256,7 +278,7 @@ nav{
     margin-right:10px;
     cursor: pointer;
     font-size: 20px;
-}
+} */
 
 .productButton
 {
@@ -275,6 +297,103 @@ nav{
     color: black;
 }
 
+.banner
+{
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("./images/banner.jpg");
+    background-position: 20% 30%;
+    width: 100%;
+    height: 50vh;
+    background-size: cover;
+    /* background-position: center; */
+}
+
+.banner h2{
+    color: rgb(248, 248, 255);
+    /* color: rgb(17, 118, 118); */
+    font-size: 35px;
+    
+}
+
+.banner h2 span{
+    /* color: rgb(17, 118, 118); */
+    color: green;
+}
+
+.btnStyle
+{
+    font-size: 16px;
+    font-weight: 600;
+    padding: 15px 30px;
+    color: green;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.2s;
+}
+
+.btnStyle:hover
+{
+    background-color: green;
+    color: #fff;
+}
+
+.newsletter
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url("./images//banner2.jpg");
+    background-size: cover;
+    padding: 20px 40px;
+    margin: 40px 0;
+}
+
+.newsletter h4{
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.newsletter p{
+    font-size: 14px;
+    font-weight: 600;
+    color: #c4c8cd;
+}
+
+.newsletter p span{
+    color: #ffbd27;
+}
+
+.newsletter input
+{
+    height: 3.125rem;
+    padding: 0 1em;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline: none;
+}
+
+.newsletter .form
+{
+    display: flex;
+    width: 40%;
+}
+
+.newsletter button
+{
+    padding: 6px 20px;
+    background-color: green;
+    color: #fff;
+}
 .payment
 {
     width: 500px;
