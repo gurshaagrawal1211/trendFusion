@@ -350,6 +350,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     background: url("./images//banner2.jpg");
+    /* background-repeat: no-repeat; */
     background-size: cover;
     padding: 20px 40px;
     margin: 40px 0;
@@ -380,12 +381,17 @@ nav{
     border: 1px solid transparent;
     border-radius: 4px;
     outline: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .newsletter .form
 {
     display: flex;
     width: 40%;
+    white-space: nowrap;
+    border-top-left-radius:0;
+    border-bottom-left-radius:0;
 }
 
 .newsletter button
